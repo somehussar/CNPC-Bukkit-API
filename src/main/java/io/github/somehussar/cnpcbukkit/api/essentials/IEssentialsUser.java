@@ -75,7 +75,7 @@ public interface IEssentialsUser {
 
 
     /**
-     * <bold>Expert use only. Use it if the API is too limiting.</bold>
+     * <strong>Expert use only. Use it if the API is too limiting.</strong>
      * @return Raw <code>Essentials</code> userdata object.
      */
     User getEssentialsUserData();

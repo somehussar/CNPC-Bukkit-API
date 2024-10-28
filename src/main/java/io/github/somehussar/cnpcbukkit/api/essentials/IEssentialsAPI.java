@@ -11,7 +11,7 @@ public interface IEssentialsAPI {
 
     /**
      * @param player player object.
-     * @return Returns <code>Essentials</code> user data. <bold>Works only for online players.</bold>
+     * @return Returns <code>Essentials</code> user data. <strong>Works only for online players.</strong>
      */
     IEssentialsUser getUser(IPlayer player);
 }

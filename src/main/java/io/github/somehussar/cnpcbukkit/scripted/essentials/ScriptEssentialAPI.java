@@ -1,6 +1,7 @@
 package io.github.somehussar.cnpcbukkit.scripted.essentials;
 
 import com.earth2me.essentials.IEssentials;
+import com.earth2me.essentials.User;
 import io.github.somehussar.cnpcbukkit.api.essentials.IEssentialsAPI;
 import io.github.somehussar.cnpcbukkit.api.essentials.IEssentialsUser;
 import noppes.npcs.api.entity.IPlayer;
@@ -40,7 +41,10 @@ public class ScriptEssentialAPI implements IEssentialsAPI {
         if (player != null) {
             return new ScriptEssentialsUser(ESSENTIALS.getUser(player));
         }
-        return new ScriptEssentialsUser(ESSENTIALS.getUser(userName));
+        User user = ESSENTIALS.getUser(userName);
+        if(user != null)
+            return new ScriptEssentialsUser(user);
+        return null;
     }
 
     @Override
@@ -49,6 +53,9 @@ public class ScriptEssentialAPI implements IEssentialsAPI {
     }
 
     private IEssentialsUser getOfflineUser(String userName) {
-        return new ScriptEssentialsUser(ESSENTIALS.getOfflineUser(userName));
+        User user = ESSENTIALS.getOfflineUser(userName);
+        if (user != null)
+            return new ScriptEssentialsUser(user);
+        return null;
     }
 }

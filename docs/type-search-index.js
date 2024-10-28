@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"io.github.somehussar.cnpcbukkit.api","l":"AbstractPluginAPI"},{"l":"All Classes","url":"allclasses-index.html"},{"p":"io.github.somehussar.cnpcbukkit.api.essentials","l":"IEssentialsAPI"},{"p":"io.github.somehussar.cnpcbukkit.api.essentials","l":"IEssentialsUser"}]
