@@ -35,6 +35,18 @@ public class ScriptEssentialAPI implements IEssentialsAPI {
         return instance;
     }
 
+    @Deprecated
+    /**
+     * Fixes a bug with being unable to pick the correct function overload.
+     */
+    public IEssentialsUser getUser(Object object) {
+        if (object instanceof String)
+            return getUser((String) object);
+        if (object instanceof IPlayer)
+            return getUser((IPlayer) object);
+        return null;
+    }
+
     @Override
     public IEssentialsUser getUser(String userName) {
         Player player = Bukkit.getPlayer(userName);
@@ -52,10 +64,4 @@ public class ScriptEssentialAPI implements IEssentialsAPI {
         return getUser(player.getName());
     }
 
-    private IEssentialsUser getOfflineUser(String userName) {
-        User user = ESSENTIALS.getOfflineUser(userName);
-        if (user != null)
-            return new ScriptEssentialsUser(user);
-        return null;
-    }
 }
