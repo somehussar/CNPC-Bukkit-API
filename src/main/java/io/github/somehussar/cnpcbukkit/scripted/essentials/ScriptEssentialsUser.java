@@ -35,35 +35,35 @@ public class ScriptEssentialsUser implements IEssentialsUser {
     }
 
     @Override
-    public void payUser(String userName, double amount) throws MaxMoneyException, ChargeException {
+    public void payUser(String recipientUserName, double amount) throws MaxMoneyException, ChargeException {
         IEssentialsAPI API = AbstractPluginAPI.getInstance().getEssentialsAPI();
-        this.payUser(API.getUser(userName), amount);
+        this.payUser(API.getUser(recipientUserName), amount);
     }
 
     @Override
-    public void payUser(IEssentialsUser user, double amount) throws MaxMoneyException, ChargeException {
-        this.payUserExact(user, BigDecimal.valueOf(amount));
+    public void payUser(IEssentialsUser recipientUser, double amount) throws MaxMoneyException, ChargeException {
+        this.payUserExact(recipientUser, BigDecimal.valueOf(amount));
     }
 
     @Override
-    public void payUser(IPlayer player, double amount) throws MaxMoneyException, ChargeException {
-        this.payUser(player.getName(), amount);
+    public void payUser(IPlayer recipientPlayer, double amount) throws MaxMoneyException, ChargeException {
+        this.payUser(recipientPlayer.getName(), amount);
     }
 
     @Override
-    public void payUserExact(String userName, BigDecimal amount) throws MaxMoneyException, ChargeException {
+    public void payUserExact(String recipientUserName, BigDecimal amount) throws MaxMoneyException, ChargeException {
         IEssentialsAPI API = AbstractPluginAPI.getInstance().getEssentialsAPI();
-        this.payUserExact(API.getUser(userName), amount);
+        this.payUserExact(API.getUser(recipientUserName), amount);
     }
 
     @Override
-    public void payUserExact(IEssentialsUser user, BigDecimal amount) throws MaxMoneyException, ChargeException {
-        essentialsUser.payUser(user.getEssentialsUserData(), amount);
+    public void payUserExact(IEssentialsUser recipientUser, BigDecimal amount) throws MaxMoneyException, ChargeException {
+        essentialsUser.payUser(recipientUser.getEssentialsUserData(), amount);
     }
 
     @Override
-    public void payUserExact(IPlayer player, BigDecimal amount) throws MaxMoneyException, ChargeException {
-        this.payUserExact(player.getName(), amount);
+    public void payUserExact(IPlayer recipientPlayer, BigDecimal amount) throws MaxMoneyException, ChargeException {
+        this.payUserExact(recipientPlayer.getName(), amount);
     }
 
     @Override
