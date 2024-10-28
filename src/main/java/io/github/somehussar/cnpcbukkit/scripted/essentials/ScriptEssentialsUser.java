@@ -6,6 +6,7 @@ import io.github.somehussar.cnpcbukkit.api.AbstractPluginAPI;
 import io.github.somehussar.cnpcbukkit.api.essentials.IEssentialsAPI;
 import io.github.somehussar.cnpcbukkit.api.essentials.IEssentialsUser;
 import net.ess3.api.MaxMoneyException;
+import noppes.npcs.api.AbstractNpcAPI;
 import noppes.npcs.api.entity.IPlayer;
 
 import java.math.BigDecimal;
@@ -103,5 +104,15 @@ public class ScriptEssentialsUser implements IEssentialsUser {
     @Override
     public User getEssentialsUserData() {
         return this.essentialsUser;
+    }
+
+    @Override
+    public IPlayer getCNPCPlayer() {
+        return AbstractNpcAPI.Instance().getPlayer(essentialsUser.getName());
+    }
+
+    @Override
+    public boolean isOnline() {
+        return essentialsUser.getBase().isOnline();
     }
 }

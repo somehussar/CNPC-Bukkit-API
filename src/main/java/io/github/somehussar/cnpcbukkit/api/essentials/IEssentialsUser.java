@@ -32,4 +32,8 @@ public interface IEssentialsUser {
 
 
     User getEssentialsUserData();
+
+    IPlayer getCNPCPlayer();
+
+    boolean isOnline();
 }
