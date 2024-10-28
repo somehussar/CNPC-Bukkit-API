@@ -23,7 +23,7 @@ public class ScriptEssentialAPI implements IEssentialsAPI {
             return instance;
 
 
-        Plugin essentialsPlugin = Bukkit.getPluginManager().getPlugin("");
+        Plugin essentialsPlugin = Bukkit.getPluginManager().getPlugin("Essentials");
 
         if (essentialsPlugin instanceof IEssentials) {
             instance = new ScriptEssentialAPI((IEssentials) essentialsPlugin);
