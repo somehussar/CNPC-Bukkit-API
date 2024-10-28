@@ -16,13 +16,13 @@ import noppes.npcs.scripted.CustomNPCsException;
  *
  * function interact(event) {
  *     var player1 = EssAPI.getUser("Hussar"); // This approach works by player name, and can acquire even offline players.
- *     player1 = EssAPI.getUser(event.player); // Scripted Player object. Acquired from events.
+ *     var player2 = EssAPI.getUser(event.player); // Scripted Player object. Acquired from events.
  *     var player3 = EssAPI.getUser(API.getPlayer("Hussar")); // This approach only works on online players.
  *
  *     var npc = event.npc;
- *     if (player1.canAfford(1000) && player1.isOnline()) {
- *         var dbcPlayer = player1.getCNPCPlayer().getDBCPlayer();
- *         player1.takeMoney(1000);
+ *     if (player2.canAfford(1000) && player2.isOnline()) {
+ *         var dbcPlayer = player2.getCNPCPlayer().getDBCPlayer();
+ *         player2.takeMoney(1000);
  *         dbcPlayer.setStat("str", dbcPlayer.getStat("str") + 100);
  *         dbcPlayer.sendMessage("Given you 100 STR for $1000");
  *     } else {
