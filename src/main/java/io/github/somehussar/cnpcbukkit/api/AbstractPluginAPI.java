@@ -1,10 +1,7 @@
 package io.github.somehussar.cnpcbukkit.api;
 
 import io.github.somehussar.cnpcbukkit.api.essentials.IEssentialsAPI;
-import io.github.somehussar.cnpcbukkit.api.essentials.IEssentialsUser;
 import io.github.somehussar.cnpcbukkit.scripted.PluginAPI;
-import io.github.somehussar.cnpcbukkit.scripted.essentials.ScriptEssentialAPI;
-import io.github.somehussar.cnpcbukkit.scripted.essentials.ScriptEssentialsUser;
 
 public abstract class AbstractPluginAPI {
 
@@ -16,7 +13,5 @@ public abstract class AbstractPluginAPI {
         return instance;
     }
 
-    public IEssentialsAPI getEssentialsAPI() {
-        return ScriptEssentialAPI.getInstance();
-    }
+    public abstract IEssentialsAPI getEssentialsAPI();
 }

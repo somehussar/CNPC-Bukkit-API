@@ -12,9 +12,10 @@ import org.bukkit.plugin.Plugin;
 public class ScriptEssentialAPI implements IEssentialsAPI {
     private static IEssentialsAPI instance;
 
-    private IEssentials Essentials;
+    private final IEssentials ESSENTIALS;
 
-    public ScriptEssentialAPI(IEssentials essentials) {
+    public ScriptEssentialAPI(IEssentials ESSENTIALS) {
+        this.ESSENTIALS = ESSENTIALS;
     }
 
     public static IEssentialsAPI getInstance() {
@@ -35,7 +36,11 @@ public class ScriptEssentialAPI implements IEssentialsAPI {
 
     @Override
     public IEssentialsUser getUser(String userName) {
-        return null;
+        Player player = Bukkit.getPlayer(userName);
+        if (player != null) {
+            return new ScriptEssentialsUser(ESSENTIALS.getUser(player));
+        }
+        return new ScriptEssentialsUser(ESSENTIALS.getUser(userName));
     }
 
     @Override
@@ -43,8 +48,7 @@ public class ScriptEssentialAPI implements IEssentialsAPI {
         return getUser(player.getName());
     }
 
-    @Override
-    public IEssentialsUser getOfflineUser(String userName) {
-        return null;
+    private IEssentialsUser getOfflineUser(String userName) {
+        return new ScriptEssentialsUser(ESSENTIALS.getOfflineUser(userName));
     }
 }
