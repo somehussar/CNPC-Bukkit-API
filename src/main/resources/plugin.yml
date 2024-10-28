@@ -1,0 +1,4 @@
+name: CustomNPCPluginsAPI
+main: io.github.somehussar.cnpcbukkit.CNPCPluginsAPI
+version: 1.0.0
+author: Hussar
