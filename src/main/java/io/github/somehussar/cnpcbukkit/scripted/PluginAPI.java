@@ -1,4 +1,4 @@
-package io.github.somehussar.cnpcbukkit.impl.api;
+package io.github.somehussar.cnpcbukkit.scripted;
 
 import io.github.somehussar.cnpcbukkit.api.AbstractPluginAPI;
 
